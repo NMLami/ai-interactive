@@ -20,7 +20,7 @@ const TextToSpeech = () => {
     //   }
 
     const [isRecording, setRecording] = useState(false);
-    const [audioData, setAudioData] = useState([]);
+    const [audioUrl, setAudioUrl] = useState(null);
     const [language, setLanguage] = useState("en");
 
   const startRecording = () => {
@@ -41,7 +41,8 @@ const TextToSpeech = () => {
 
     const formData = new FormData();
     formData.append('file', recordedBlob.blob);
-    formData.append('lang', language );
+    formData.append('lang', "en" );
+    formData.append('grp', "kid" );
     console.log("API HIT")
     console.log("audioData API", recordedBlob.blob)
 
@@ -49,8 +50,12 @@ const TextToSpeech = () => {
      fetch('http://localhost:8000/answer', {
         method: 'POST',
         body: formData,
-      }).then(res => res.json())
-      .then(data => console.log(data))
+      }).then(async(response) => {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        setAudioUrl(url);
+      })
+      .then(data => console.log(typeof data) )
       
     } catch (error) {
       console.error('Error transcribing audio:', error);
@@ -101,13 +106,23 @@ const TextToSpeech = () => {
       <button onClick={stopRecording} type="button">
         Stop
       </button>
-        <h4>  Reply {
+        {/* <h4>  Reply {
                     audioData && audioData.map(transcribe => 
                         <p>{transcribe.answer}</p>
                         )
                 }
-                </h4>
+                </h4> */}
+        {audioUrl && (
+        <audio autoPlay controls >
+          <source src={audioUrl}  type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        )}
+        
+ 
     </div>
+
+    
     );
   };
 

@@ -4,7 +4,9 @@ const addToken = token => {
     localStorage.setItem('token', token);
   }
   
+
   const getToken = () => localStorage.getItem('token');
+
   
 //   const updateDb = cart => {
 //     localStorage.setItem('shopping_cart', JSON.stringify(cart));

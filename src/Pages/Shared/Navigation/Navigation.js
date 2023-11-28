@@ -2,16 +2,23 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { userLoggedIn,logout } from '../../../utilities/localStorageUtility';
+// import { userLoggedIn, logout } from '../../../utilities/localStorageUtility';
 import ApiIcon from '@mui/icons-material/Api';
 
 const Navigation = () => {
-    const user = userLoggedIn();
+    // const user = userLoggedIn();
 
-    const logoutClick = e => {
-        logout()
-        e.preventDefault();
-    }
+    // const logoutClick = e => {
+    //     logout()
+
+
+    //     e.preventDefault();
+    // }
+    // const addLanguage = (language)=>{
+    //     console.log(language)
+    //     localStorage.setItem('lang', language);
+    // }
+
     return (
         <div>
         <Navbar bg="dark" sticky="top" variant="black"  collapseOnSelect expand="lg" >
@@ -20,7 +27,11 @@ const Navigation = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-begin" >
                         <Nav>
-                        {/* <Nav.Link as={HashLink} style={{color:'white'}} to="/custome">Preference</Nav.Link> */}
+                        {/* <Button className='mx-2' onClick={()=>addLanguage("en")} variant="danger">ENG</Button>
+                        <Button className='mx-2' onClick={()=>addLanguage("sv")} variant="danger">SWE</Button> */}
+
+                       {/* <Nav.Link as={Link}  style={{color:'white'}}  to="/home/swedish">SWE</Nav.Link> */}
+
                         {/* <Nav.Link as={Link}  style={{color:'white'}}  to="/products">Prediction</Nav.Link> */}
 {/* 
                         <Nav.Link as={Link}  style={{color:'white'}}  to={{pathname: "https://documenter.getpostman.com/view/15942482/2s8Z76w9Ef"}} target="_blank"> Documentation</Nav.Link>
@@ -37,7 +48,7 @@ const Navigation = () => {
                             {/* <div className="ms-auto">
                          
                         </div> */}
-                        <div className="ms-auto">
+                        {/* <div className="ms-auto">
                         {user?.email?
                             <Button className='mx-2' onClick={logoutClick} variant="danger">Logout</Button>
                             :
@@ -45,7 +56,7 @@ const Navigation = () => {
                         <Navbar.Text style={{color:'white'}} >
                           {user?.email} 
                         </Navbar.Text>
-                        </div>
+                        </div> */}
                     </Navbar.Collapse>
                 </Container>
             </Navbar> 
