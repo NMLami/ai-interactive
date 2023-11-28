@@ -9,6 +9,7 @@ import {
 
 import Home from './Pages/Home/Home/Home';
 import TextToSpeech from './Pages/TextToSpeech/TextToSpeech';
+import Playquiz from './Pages/Playquiz/Playquiz';
 // import Register from './Pages/Login/Register/Register';
 // import Login from './Pages/Login/Login/Login';
 // import CustomeParam from './Pages/CustomeParam/CustomeParam';
@@ -53,10 +54,13 @@ function App() {
               <CustomeParam />
           </PrivateRoute> */}
 
-          <Route path="/test/speech/python">
+          <Route path="/interactive-friend">
               <TextToSpeech/>
           </Route>
-       
+
+          <Route path="/play-quiz">
+              <Playquiz/>
+          </Route>
 
           <Route exact path="/">
             <Home />
