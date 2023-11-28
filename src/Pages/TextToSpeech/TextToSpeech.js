@@ -21,6 +21,7 @@ const TextToSpeech = () => {
 
     const [isRecording, setRecording] = useState(false);
     const [audioData, setAudioData] = useState([]);
+    const [language, setLanguage] = useState("en");
 
   const startRecording = () => {
     setRecording(true);
@@ -40,6 +41,7 @@ const TextToSpeech = () => {
 
     const formData = new FormData();
     formData.append('file', recordedBlob.blob);
+    formData.append('lang', language );
     console.log("API HIT")
     console.log("audioData API", recordedBlob.blob)
 
@@ -48,7 +50,7 @@ const TextToSpeech = () => {
         method: 'POST',
         body: formData,
       }).then(res => res.json())
-      .then(data => setAudioData(data))
+      .then(data => console.log(data))
       
     } catch (error) {
       console.error('Error transcribing audio:', error);
@@ -101,7 +103,7 @@ const TextToSpeech = () => {
       </button>
         <h4>  Reply {
                     audioData && audioData.map(transcribe => 
-                        <p>{transcribe.transcription}</p>
+                        <p>{transcribe.answer}</p>
                         )
                 }
                 </h4>

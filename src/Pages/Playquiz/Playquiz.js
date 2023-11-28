@@ -1,72 +1,114 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
-import { Button, Container, FormControl, FormControlLabel, Radio, RadioGroup, Typography } from '@mui/material';
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
+
+
 
 const Playquiz = () => {
-    const [selectedOption1, setSelectedOption1] = useState('');
-    const [selectedOption2, setSelectedOption2] = useState('');
-  
-    const handleOption1Change = (event) => {
-      setSelectedOption1(event.target.value);
-    };
-  
-    const handleOption2Change = (event) => {
-      setSelectedOption2(event.target.value);
-    };
-  
-    const handleSubmit = () => {
-      // Handle the submission logic here
-      console.log('Selected Options:', selectedOption1, selectedOption2);
-    };
+
+        const [quiz, setQuizes] = useState({
+            "random_question": {
+                "correctOption": " ",
+                "option1": " ",
+                "option2": " ",
+                "question": " "
+            }
+        })
+
+        const [showModal, setShowModal] = useState(false);
+        const [answer, setAnswer] = useState(" ");
+
+        const handleClose = () => setShowModal(false);
+        const handleShow = () => setShowModal(true);
+      
+
+    useEffect(() => {
+        fetch('http://localhost:5000/random_question')
+            .then(res => res.json())
+            .then(data => setQuizes(data));
+    }, [])
+   
+    console.log(quiz)
+
+    const handleClick = (event)=>{
+        console.log(event)
+        if(event["quizAnswer"] === event["selectedAnswer"]){
+            console.log(event["quizAnswer"])
+            setAnswer("Wohooo! Great Answer")
+        }else{
+            setAnswer("Oh no!!! Try another one")
+        }
+        
+        handleShow()
+    }
+
+    const newQuestion = ()=>{
+
+        fetch('http://localhost:5000/random_question')
+        .then(res => res.json())
+        .then(data => setQuizes(data));
+
+        handleClose()
+
+    }
+
+
 
     
     return (
         <div>
             <Navigation></Navigation>
-            (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Quiz
-      </Typography>
+            <Container>
+      <Row>
+        {/* First Card */}
+        <Col>
+          <Card style={{ width: '18rem', margin: '10px' }}>
+            <Card.Img variant="top" src= { quiz.random_question['option1']} />
+            <Card.Body>
+              <Card.Title>Option A</Card.Title>
+              <Button variant="primary" onClick= {() => handleClick({"quizAnswer":quiz.random_question['correctOption'],"selectedAnswer":"option1"})}>Select</Button>
+            </Card.Body>
+          </Card>
+        </Col>
 
-      <div>
-        <img src="path/to/image1.jpg" alt="Option 1" style={{ width: '100%', maxWidth: '400px' }} />
-        <FormControl component="fieldset">
-          <RadioGroup
-            row
-            aria-label="quiz"
-            name="quiz1"
-            value={selectedOption1}
-            onChange={handleOption1Change}
-          >
-            <FormControlLabel value="optionA" control={<Radio />} label="Option A" />
-            <FormControlLabel value="optionB" control={<Radio />} label="Option B" />
-            <FormControlLabel value="optionC" control={<Radio />} label="Option C" />
-          </RadioGroup>
-        </FormControl>
-      </div>
-
-      <div>
-        <img src="path/to/image2.jpg" alt="Option 2" style={{ width: '100%', maxWidth: '400px' }} />
-        <FormControl component="fieldset">
-          <RadioGroup
-            row
-            aria-label="quiz"
-            name="quiz2"
-            value={selectedOption2}
-            onChange={handleOption2Change}
-          >
-            <FormControlLabel value="optionX" control={<Radio />} label="Option X" />
-            <FormControlLabel value="optionY" control={<Radio />} label="Option Y" />
-            <FormControlLabel value="optionZ" control={<Radio />} label="Option Z" />
-          </RadioGroup>
-        </FormControl>
-      </div>
-
-      <Button variant="contained" color="primary" onClick={handleSubmit}>
-        Submit
-      </Button>
+        {/* Second Card */}
+        <Col>
+          <Card style={{ width: '18rem', margin: '10px' }}>
+            <Card.Body>
+              <Card.Title>{ quiz.random_question['question']}</Card.Title>
+              <Button variant="primary">Select</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        {/* Third Card */}
+        <Col>
+          <Card style={{ width: '18rem', margin: '10px' }}>
+            <Card.Img variant="top" src={ quiz.random_question['option2']}/>
+            <Card.Body>
+              <Card.Title>Option B</Card.Title>
+              <Button variant="primary" onClick= {() => handleClick({"quizAnswer":quiz.random_question['correctOption'],"selectedAnswer":"option2"})} >Select</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
+
+    <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Let's See The Answer</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{answer}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={newQuestion}>
+            Try Another
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      
         </div>
     );
 };
