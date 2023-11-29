@@ -21,7 +21,7 @@ const TextToSpeech = () => {
 
   const [isRecording, setRecording] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
-  //const [currentVideo, setVideoUrl] = useState("panda.gif");
+  const [currentVideo, setVideoUrl] = useState("panda.gif");
   const [language, setLanguage] = useState("en");
 
   const startRecording = () => {
@@ -55,7 +55,7 @@ const TextToSpeech = () => {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
         setAudioUrl(url);
-        //setVideoUrl("panda.gif")
+        setVideoUrl("panda.gif")
       })
         .then(data => console.log(typeof data))
 
@@ -124,10 +124,13 @@ const TextToSpeech = () => {
                 }
                 </h4> */}
       {audioUrl && (
-        <audio autoPlay controls >
-          <source src={audioUrl} type="audio/mp3" />
-          Your browser does not support the audio element.
-        </audio>
+        <div class="media">
+          <audio class="voice" autoPlay controls >
+            <source src={audioUrl} type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+          <img src={currentVideo} />
+        </div>
       )}
 
 
