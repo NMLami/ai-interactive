@@ -21,7 +21,7 @@ const TextToSpeech = () => {
 
   const [isRecording, setRecording] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
-  const [currentVideo, setVideoUrl] = useState("panda.gif");
+  //const [currentVideo, setVideoUrl] = useState("panda.gif");
   const [language, setLanguage] = useState("en");
 
   const startRecording = () => {
@@ -55,7 +55,7 @@ const TextToSpeech = () => {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
         setAudioUrl(url);
-        setVideoUrl("panda.gif")
+        //setVideoUrl("panda.gif")
       })
         .then(data => console.log(typeof data))
 
@@ -104,13 +104,13 @@ const TextToSpeech = () => {
       />
       <div class="controls mx-5 d-flex justify-content-center mt-4">
 
-        <button href="#" class="button lightbg-blue clearfix mx-5" onClick={startRecording} >
+        <button class="button lightbg-blue clearfix mx-5" onClick={startRecording} >
           <span>
             Start</span>
 
         </button>
 
-        <button href="#" class="button lightbg-blue clearfix" onClick={stopRecording} >
+        <button class="button lightbg-blue clearfix" onClick={stopRecording} >
           <span>
             Stop
           </span>
@@ -124,14 +124,10 @@ const TextToSpeech = () => {
                 }
                 </h4> */}
       {audioUrl && (
-        <div class="media">
-          <audio autoPlay controls >
-            <source src={audioUrl} type="audio/mp3" />
-            Your browser does not support the audio element.
-          </audio>
-          <img
-            src={currentVideo}
-          /></div>
+        <audio autoPlay controls >
+          <source src={audioUrl} type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
       )}
 
 
