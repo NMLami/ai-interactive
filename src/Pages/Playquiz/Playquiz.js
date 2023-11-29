@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
+import "./Playquiz.css"
+
+const quizVideo = "panda-select-one.mp4"
 
 
 
@@ -52,15 +55,14 @@ const Playquiz = () => {
         handleClose()
 
     }
+    const [currentVideoQuiz] = useState(quizVideo);
 
 
-
-    
     return (
-        <div>
+        <div >
             <Navigation></Navigation>
-            <Container>
-      <Row>
+            <Container  >
+      <Row id= "quizcont" > 
         {/* First Card */}
         <Col>
           <Card style={{ width: '18rem', margin: '10px' }}>
@@ -77,10 +79,18 @@ const Playquiz = () => {
           <Card style={{ width: '18rem', margin: '10px' }}>
             <Card.Body>
               <Card.Title>{ quiz.random_question['question']}</Card.Title>
-              <Button variant="primary">Select</Button>
             </Card.Body>
-          </Card>
+          </Card> 
+          <video
+          id="videoPlayer"
+          loop autoPlay controls
+          src= {currentVideoQuiz}
+          style={{ width: '80%', maxHeight: '400px' }}
+        />   
         </Col>
+        
+    
+       
         {/* Third Card */}
         <Col>
           <Card style={{ width: '18rem', margin: '10px' }}>

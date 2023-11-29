@@ -30,7 +30,7 @@ const Navigation = () => {
                         {/* <Button className='mx-2' onClick={()=>addLanguage("en")} variant="danger">ENG</Button>
                         <Button className='mx-2' onClick={()=>addLanguage("sv")} variant="danger">SWE</Button> */}
 
-                       {/* <Nav.Link as={Link}  style={{color:'white'}}  to="/home/swedish">SWE</Nav.Link> */}
+                       <Nav.Link as={Link}  style={{color: 'white', background: '#007BFF', padding: '8px', borderRadius: '3px', textDecoration: 'none'}}  to="/play-quiz">Play a Quiz</Nav.Link>
 
                         {/* <Nav.Link as={Link}  style={{color:'white'}}  to="/products">Prediction</Nav.Link> */}
 {/* 

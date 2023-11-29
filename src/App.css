@@ -1,6 +1,8 @@
 .App {
+  height: 1000px;
   text-align: center;
-  background-color: #c4d4e0;
+  background-color: #900C3F;
+
 }
 
 .App-logo {
@@ -36,4 +38,132 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/** Button **/
+
+/* Define the wooden texture gradient */
+@keyframes woodGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Style for the 3D wooden button */
+.button {
+  width: 9.5em;
+  display: block;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ie-border-radius: 6px;
+  border-radius: 6px;
+  padding: .48em .8em;
+  text-shadow: rgba(0, 0, 0, .5) 0px -1px 0px;
+  font-size: 18px;
+  font-weight: 700;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: .15s;
+  -webkit-transition-timing-function: ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+
+.lightbg-blue {
+  background-color: #64a8a6;
+  color: #dafffe;
+  -webkit-box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset, 0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655, 0px 8px 0px 0px rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset, 0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655, 0px 8px 0px 0px rgba(0, 0, 0, .15);
+  -ie-box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset, 0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655, 0px 8px 0px 0px rgba(0, 0, 0, .15);
+  box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset, 0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655, 0px 8px 0px 0px rgba(0, 0, 0, .15);
+}
+
+.lightbg-blue:hover {
+  background-color: #73c2c0;
+}
+
+.lightbg-blue:active {
+  background-color: #5a9896;
+  -webkit-box-shadow: 0px 0px 0px 1px #589391 inset, 0px 0px 0px 2px #65a9a7 inset, 0px 1px 0px 0px #355655, 0px 3px 0px 0px rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0px 0px 0px 1px #589391 inset, 0px 0px 0px 2px #65a9a7 inset, 0px 1px 0px 0px #355655, 0px 3px 0px 0px rgba(0, 0, 0, .15);
+  -ie-box-shadow: 0px 0px 0px 1px #589391 inset, 0px 0px 0px 2px #65a9a7 inset, 0px 1px 0px 0px #355655, 0px 3px 0px 0px rgba(0, 0, 0, .15);
+  box-shadow: 0px 0px 0px 1px #589391 inset, 0px 0px 0px 2px #65a9a7 inset, 0px 1px 0px 0px #355655, 0px 3px 0px 0px rgba(0, 0, 0, .15);
+}
+
+.lightbg-blue .arrow {
+  border-color: transparent transparent transparent #74b6b4;
+}
+
+
+.button {
+  width: 9.5em;
+  display: block;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ie-border-radius: 6px;
+  border-radius: 6px;
+  padding: .48em .8em;
+  text-shadow: rgba(0, 0, 0, .5) 0px -1px 0px;
+  font-size: 18px;
+  font-weight: 700;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: .15s;
+  -webkit-transition-timing-function: ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.button:active {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.button span {
+  vertical-align: middle;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ie-border-radius: 13px;
+  border-radius: 13px;
+  background: rgba(0, 0, 0, .3);
+  float: right;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2) inset, 0px 0px 0px 1px rgba(255, 255, 255, .2);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2) inset, 0px 0px 0px 1px rgba(255, 255, 255, .2);
+  -ie-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2) inset, 0px 0px 0px 1px rgba(255, 255, 255, .2);
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2) inset, 0px 0px 0px 1px rgba(255, 255, 255, .2);
+}
+
+.arrow {
+  margin: 7px 0px 0 8px;
+  -webkit-border-style: solid;
+  -moz-border-style: solid;
+  -ie-border-style: solid;
+  border-style: solid;
+  border-width: 6px 6px 6px 12px;
+  width: 0;
+  height: 0;
+}
+
+.mic {
+  border-radius: 15px;
+  height: 80px;
+  margin-top: 30vh;
+}
+
+.voice {
+  display: none;
 }

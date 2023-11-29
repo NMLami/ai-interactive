@@ -1,0 +1,18 @@
+#changeLang{
+    display: flex;
+    margin-top: 10px;
+}
+#videoPlayer{
+    color:  #900C3F;
+}
+
+#videoContainerText{
+    color: #ffffff;
+    font-family: Arial Narrow bold;
+    font-size: 46px ;
+}
+#videoContainer{
+    color:   #900C3F;
+    background-color:  #900C3F;
+
+}

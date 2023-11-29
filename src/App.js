@@ -10,6 +10,7 @@ import {
 import Home from './Pages/Home/Home/Home';
 import TextToSpeech from './Pages/TextToSpeech/TextToSpeech';
 import Playquiz from './Pages/Playquiz/Playquiz';
+import TextToSpeechSwedish from './Pages/TextToSpeechSwedish/TextToSpeechSwedish';
 
 // import Login from './Pages/Login/Login/Login';
 // import CustomeParam from './Pages/CustomeParam/CustomeParam';
@@ -53,10 +54,16 @@ function App() {
           <PrivateRoute path="/custome">
               <CustomeParam />
           </PrivateRoute> */}
+          
+           <Route path="/interactive-friend/swedish/:id">
+              <TextToSpeechSwedish/>
+          </Route>
 
-          <Route path="/interactive-friend">
+          <Route path="/interactive-friend/:id">
               <TextToSpeech/>
           </Route>
+
+         
 
           <Route path="/play-quiz">
               <Playquiz/>
