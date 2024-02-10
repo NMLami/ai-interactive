@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Interactive AI Avatar for Exploratories Science Center at Arctic Hackathon 2023
+## Technology Used
+![alt text](https://i.ibb.co/FBnw4cJ/techstack.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Provided Challenge
 
-## Available Scripts
+## Objective
+The objective of this project is to develop an interactive AI avatar capable of engaging visitors in a science center setting. The avatar should dynamically adapt to various age groups, provide real-time interactions, and ensure continuous operation for extended durations.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+### Multilingual Conversational Interface
+- The AI avatar is proficient in both English and Swedish, facilitating seamless communication with visitors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Adaptability and User Engagement
+- Designed to dynamically engage with various age groups, ensuring a fun and educational experience for all visitors.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Real-time Interaction
+- Enables real-time responses and interactions to swiftly engage with multiple visitors, delivering quick and informative answers.
 
-### `npm test`
+### Continuous Operation
+- Developed to run continuously without performance degradation for extended periods within the science center environment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Content Variety
+- Incorporates a diverse range of interactive content, such as scientific facts, quizzes, games, and experiments, catering to different learning preferences.
 
-### `npm run build`
+## Technical Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Windows Compatibility
+- The application is compatible with Windows operating systems.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stability and Reliability
+- Ensures the avatar's stability for long-term operation, with minimal maintenance and performance optimization.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### User-Friendly Interface
+- Creates an intuitive and user-friendly interface, facilitating easy navigation for visitors of all ages.
 
-### `npm run eject`
+### Data Privacy and Security
+- Implements measures to ensure data privacy and security for user interactions and any collected information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Scalability
+- Designs the avatar system to accommodate potential scaling for future enhancements and increased visitor interactions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
